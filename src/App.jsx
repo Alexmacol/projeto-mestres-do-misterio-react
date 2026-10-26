@@ -1,5 +1,11 @@
+import Hero from './components/Hero.jsx'
+
 function App() {
-  return <h1>Mestres do Mistério</h1>
+  return (
+    <header>
+      <Hero />
+    </header>
+  )
 }
 
 export default App
