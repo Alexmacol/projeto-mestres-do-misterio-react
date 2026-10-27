@@ -1,0 +1,154 @@
+[
+  {
+    "id": "classic crime fiction",
+    "name": "Clássico"
+  },
+  {
+    "id": "african american mystery",
+    "name": "Black Noir"
+  },
+  {
+    "id": "brazilian crime fiction",
+    "name": "Brasileiro"
+  },
+  {
+    "id": "cold war thrillers",
+    "name": "Guerra Fria"
+  },
+  {
+    "id": "war crime fiction",
+    "name": "Crimes de Guerra"
+  },
+  {
+    "id": "conspiracy thriller",
+    "name": "Conspiração"
+  },
+  {
+    "id": "cozy mystery",
+    "name": "Cozy Mystery"
+  },
+  {
+    "id": "detective fiction",
+    "name": "Detetive"
+  },
+  {
+    "id": "domestic noir",
+    "name": "Domestic Noir"
+  },
+  {
+    "id": "spy thriller",
+    "name": "Espionagem"
+  },
+  {
+    "id": "forensic thriller",
+    "name": "Forense"
+  },
+  {
+    "id": "giallo",
+    "name": "Giallo"
+  },
+  {
+    "id": "historical crime fiction",
+    "name": "Histórico"
+  },
+  {
+    "id": "howdunit mystery",
+    "name": "Howdunit"
+  },
+  {
+    "id": "international crime fiction",
+    "name": "International Crime Fiction"
+  },
+  {
+    "id": "inverted mystery",
+    "name": "Invertido (Howcatchem)"
+  },
+  {
+    "id": "young adult mystery",
+    "name": "Jovem Adulto (YA)"
+  },
+  {
+    "id": "latin-american crime fiction",
+    "name": "Latino-Americano"
+  },
+  {
+    "id": "erotic mystery",
+    "name": "Mistério Erótico"
+  },
+  {
+    "id": "noir",
+    "name": "Noir (hard-boiled)"
+  },
+  {
+    "id": "asian noir",
+    "name": "Noir Asiático"
+  },
+  {
+    "id": "nordic noir",
+    "name": "Nórdico"
+  },
+  {
+    "id": "honkaku",
+    "name": "Ortodoxo (Honkaku)"
+  },
+  {
+    "id": "outback noir",
+    "name": "Outback Noir"
+  },
+  {
+    "id": "political thriller",
+    "name": "Político"
+  },
+  {
+    "id": "police procedural",
+    "name": "Procedural"
+  },
+  {
+    "id": "psychological thriller",
+    "name": "Psicológico"
+  },
+  {
+    "id": "locked-room mystery",
+    "name": "Quarto Fechado (Locked-Room)"
+  },
+  {
+    "id": "queer mystery",
+    "name": "Queer Mystery"
+  },
+  {
+    "id": "regionalkrimi",
+    "name": "Regionalkrimi (Alemanha)"
+  },
+  {
+    "id": "supernatural thriller",
+    "name": "Sobrenatural"
+  },
+  {
+    "id": "soviet noir",
+    "name": "Soviet Noir"
+  },
+  {
+    "id": "tartan noir",
+    "name": "Tartan Noir"
+  },
+  {
+    "id": "techno thriller",
+    "name": "Techno"
+  },
+  {
+    "id": "french thriller",
+    "name": "Thriller Francês"
+  },
+  {
+    "id": "legal thriller",
+    "name": "Thriller Jurídico"
+  },
+  {
+    "id": "whodunit mystery",
+    "name": "Whodunit"
+  },
+  {
+    "id": "whydunit mystery",
+    "name": "Whydunit"
+  }
+]
