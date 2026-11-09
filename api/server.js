@@ -1,10 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const rateLimit = require("express-rate-limit");
-require("dotenv").config();
-const subgenres = require("../data.json");
+import express from "express";
+import cors from "cors";
+import path from "path";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import rateLimit from "express-rate-limit";
+import "dotenv/config";
+import subgenres from "../src/data/data.json" with { type: "json" };
 const VALID_SUBGENRES = new Set(subgenres.map((item) => item.id));
 const API_KEY = process.env.GEMINI_API_KEY;
 
@@ -33,7 +33,7 @@ const searchLimiter = rateLimit({
 
 app.use("/api/", searchLimiter);
 
-app.use(express.static(path.join(__dirname, "..")));
+app.use(express.static(path.join(import.meta.dirname, "..")));
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const primaryModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
@@ -191,10 +191,10 @@ app.post("/api/search", async (req, res) => {
   }
 });
 
-if (require.main === module) {
+if (import.meta.main) {
   app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
   });
 }
 
-module.exports = app;
+export default app;
