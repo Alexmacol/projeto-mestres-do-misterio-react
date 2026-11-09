@@ -50,7 +50,7 @@ const getAuthorsPrompt = (subgenre) => `
   - "dates": (String) As datas de nascimento e morte (ex: "1890-1976" para falecidos, ou "1950 - em atividade" para vivos). Verifique em mais de uma fonte confiável para garantir a precisão quanto às datas de nascimento e morte, ou se o autor ainda está vivo. Para autores contemporâneos, verifique com atenção extra se eles ainda estão "em atividade" ou se faleceram recentemente.
   - "description": (String) Descrição objetiva e sucinta (2 frases ou menos) sobre o estilo e contribuição do autor para o gênero.
   - "works": (Array de Strings) Uma lista de 3 obras notáveis. Se as obras foram lançadas no Brasil, use os títulos em português; caso contrário, use os títulos originais.
-  
+
   Não invente autores; use apenas autores reais e verificados.
   Não invente obras; use apenas obras reais e verificadas.
   Não invente datas; use apenas datas reais e verificadas.
@@ -77,15 +77,15 @@ const getSubgenreDescriptionPrompt = (subgenre) => `
 
   A resposta deve ser OBRIGATORIAMENTE estruturada em 3 parágrafos distintos. Utilize o caractere de quebra de linha (\\n) para separar claramente os parágrafos dentro da string JSON.
   Cada parágrafo deve ter uma extensão visual aproximada de 3 a 4 linhas de texto padrão.
-  
+
   REGRA DE FORMATAÇÃO (CRÍTICA):
   Utilize a tag HTML <i> para aplicar itálico em TODOS os títulos de obras (ex: <i>O Falcão Maltês</i>, <i>The Big Sleep</i>) e termos em língua estrangeira (ex: <i>whodunit</i>, <i>noir</i>).
   NÃO utilize aspas para destacar títulos.
   NÃO utilize markdown de nenhum tipo: nem asteriscos, nem acento grave (crase), nem sublinhados.
   Para itálico, use SOMENTE as tags <i> e </i>.
-  
+
   Retorne a resposta como um objeto JSON com uma única chave "description".
-  
+
   Exemplo de formato da resposta:
   {
     "description": "O gênero <i>Noir</i> surgiu na década de 1940.\\n\\nUma obra seminal é <i>The Maltese Falcon</i>, que definiu o estilo.\\n\\nHoje, o termo <i>thriller</i> é amplamente usado."
