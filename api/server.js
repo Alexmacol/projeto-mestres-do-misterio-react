@@ -165,7 +165,9 @@ app.post("/api/search", async (req, res) => {
         jsonResponse = JSON.parse(cleanedText);
       } catch (parseError) {
         console.error("Falha ao analisar JSON. Texto recebido:", cleanedText);
-        throw new Error("A resposta da IA não é um JSON válido.");
+        throw new Error("A resposta da IA não é um JSON válido.", {
+          cause: parseError,
+        });
       }
 
       if (!isValidResponse(searchType, jsonResponse)) {
