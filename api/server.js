@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import path from "path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import rateLimit from "express-rate-limit";
 import "dotenv/config";
@@ -32,8 +31,6 @@ const searchLimiter = rateLimit({
 });
 
 app.use("/api/", searchLimiter);
-
-app.use(express.static(path.join(import.meta.dirname, "..")));
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const primaryModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
