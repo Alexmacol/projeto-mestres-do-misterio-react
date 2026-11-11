@@ -1,5 +1,4 @@
 import express from "express";
-import cors from "cors";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import rateLimit from "express-rate-limit";
 import "dotenv/config";
@@ -21,7 +20,6 @@ const port = process.env.PORT || 3000;
 // lê o IP real do visitante (X-Forwarded-For), e o rate limit conta por pessoa.
 app.set("trust proxy", 1);
 
-app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
 
 const searchLimiter = rateLimit({
