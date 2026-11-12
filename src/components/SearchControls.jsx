@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import subgenres from '../data/data.json'
 
-function SearchControls() {
+function SearchControls({ onSearch, isLoading, activeSearchType }) {
   const [subgenre, setSubgenre] = useState('')
 
   const hasSubgenre = subgenre !== ''
+
+  const handleSearch = async (searchType) => {
+    await onSearch(subgenre, searchType)
+    setSubgenre('')
+  }
 
   return (
     <section id="search-controls" className="container">
@@ -18,6 +23,7 @@ function SearchControls() {
             id="subgenre-select"
             value={subgenre}
             onChange={(event) => setSubgenre(event.target.value)}
+            disabled={isLoading}
           >
             <option value="">Selecione um subgênero...</option>
             {subgenres.map((item) => (
@@ -26,11 +32,37 @@ function SearchControls() {
               </option>
             ))}
           </select>
-          <button type="button" className="search-btn" disabled={!hasSubgenre}>
-            <i className="fas fa-search" /> Buscar Subgênero
+          <button
+            type="button"
+            className="search-btn"
+            disabled={!hasSubgenre || isLoading}
+            onClick={() => handleSearch('subgenero')}
+          >
+            {isLoading && activeSearchType === 'subgenero' ? (
+              <>
+                <i className="fas fa-spinner fa-spin" /> Investigando...
+              </>
+            ) : (
+              <>
+                <i className="fas fa-search" /> Buscar Subgênero
+              </>
+            )}
           </button>
-          <button type="button" className="search-btn" disabled={!hasSubgenre}>
-            <i className="fas fa-search" /> Buscar Escritores
+          <button
+            type="button"
+            className="search-btn"
+            disabled={!hasSubgenre || isLoading}
+            onClick={() => handleSearch('escritores')}
+          >
+            {isLoading && activeSearchType === 'escritores' ? (
+              <>
+                <i className="fas fa-spinner fa-spin" /> Investigando...
+              </>
+            ) : (
+              <>
+                <i className="fas fa-search" /> Buscar Escritores
+              </>
+            )}
           </button>
         </div>
       </div>
