@@ -1,12 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function useSearch() {
   const [isLoading, setIsLoading] = useState(false)
   const [currentSearch, setCurrentSearch] = useState(null)
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
+  const abortControllerRef = useRef(null)
+
+  useEffect(() => {
+    return () => {
+      abortControllerRef.current?.abort()
+    }
+  }, [])
 
   const search = async (subgenre, searchType) => {
+    abortControllerRef.current?.abort()
+    const controller = new AbortController()
+    abortControllerRef.current = controller
+
     setIsLoading(true)
     setCurrentSearch({ subgenre, searchType })
     setResult(null)
@@ -17,6 +28,7 @@ function useSearch() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ subgenre, searchType }),
+        signal: controller.signal,
       }).catch(() => {
         throw new Error(
           'Não foi possível conectar ao servidor. Verifique sua internet e tente novamente.',
@@ -42,9 +54,10 @@ function useSearch() {
 
       setResult(data)
     } catch (caughtError) {
+      if (controller.signal.aborted) return
       setError(caughtError.message || 'Ocorreu um erro. Tente novamente.')
     } finally {
-      setIsLoading(false)
+      if (!controller.signal.aborted) setIsLoading(false)
     }
   }
 
