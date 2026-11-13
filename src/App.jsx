@@ -6,7 +6,7 @@ import useSearch from './hooks/useSearch.js'
 import subgenres from './data/data.json'
 
 function App() {
-  const { search, isLoading, currentSearch, result } = useSearch()
+  const { search, isLoading, currentSearch, result, error } = useSearch()
 
   let statusMessage = ''
 
@@ -34,6 +34,8 @@ function App() {
           onSearch={search}
           isLoading={isLoading}
           activeSearchType={currentSearch?.searchType}
+          error={error}
+          hasResult={result !== null}
         />
       </main>
       <Footer />

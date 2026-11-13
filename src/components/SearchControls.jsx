@@ -1,10 +1,18 @@
 import { useState } from 'react'
 import subgenres from '../data/data.json'
+import ErrorMessage from './ErrorMessage.jsx'
 
-function SearchControls({ onSearch, isLoading, activeSearchType }) {
+function SearchControls({
+  onSearch,
+  isLoading,
+  activeSearchType,
+  error,
+  hasResult,
+}) {
   const [subgenre, setSubgenre] = useState('')
 
   const hasSubgenre = subgenre !== ''
+  const showInitialMessage = !isLoading && !hasResult && !error
 
   const handleSearch = async (searchType) => {
     await onSearch(subgenre, searchType)
@@ -67,9 +75,12 @@ function SearchControls({ onSearch, isLoading, activeSearchType }) {
         </div>
       </div>
 
-      <div className="state-message">
-        <p>Selecione um subgênero e escolha o que buscar</p>
-      </div>
+      {error && <ErrorMessage message={error} />}
+      {showInitialMessage && (
+        <div className="state-message">
+          <p>Selecione um subgênero e escolha o que buscar</p>
+        </div>
+      )}
     </section>
   )
 }
