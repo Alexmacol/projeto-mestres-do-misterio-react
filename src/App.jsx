@@ -1,5 +1,6 @@
 import Hero from './components/Hero.jsx'
 import SearchControls from './components/SearchControls.jsx'
+import ResultsSection from './components/ResultsSection.jsx'
 import StatusMessage from './components/StatusMessage.jsx'
 import Footer from './components/Footer.jsx'
 import useSearch from './hooks/useSearch.js'
@@ -8,15 +9,15 @@ import subgenres from './data/data.json'
 function App() {
   const { search, isLoading, currentSearch, result, error } = useSearch()
 
+  const subgenreName = currentSearch
+    ? subgenres.find((item) => item.id === currentSearch.subgenre).name
+    : ''
+
   let statusMessage = ''
 
   if (isLoading) {
     statusMessage = 'Investigação em andamento...'
   } else if (result && currentSearch) {
-    const subgenreName = subgenres.find(
-      (item) => item.id === currentSearch.subgenre,
-    ).name
-
     statusMessage =
       currentSearch.searchType === 'subgenero'
         ? `Análise do subgênero ${subgenreName} pronta.`
@@ -36,6 +37,12 @@ function App() {
           activeSearchType={currentSearch?.searchType}
           error={error}
           hasResult={result !== null}
+        />
+        <ResultsSection
+          isLoading={isLoading}
+          searchType={currentSearch?.searchType}
+          subgenreName={subgenreName}
+          result={result}
         />
       </main>
       <Footer />
