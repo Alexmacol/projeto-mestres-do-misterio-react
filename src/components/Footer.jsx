@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer>
+    <footer id="contact">
       <section>
         <div className="container footer-content">
           <p>&copy; 2026 Mestres do Mistério. Todos os direitos reservados.</p>
