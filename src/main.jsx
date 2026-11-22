@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './css/style.css'
 import './css/scrollbar.css'
+import './css/navbar.css'
 import './css/responsive.css'
 import App from './App.jsx'
 
