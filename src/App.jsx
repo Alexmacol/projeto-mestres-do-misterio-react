@@ -1,4 +1,5 @@
 import Hero from './components/Hero.jsx'
+import Navbar from './components/Navbar.jsx'
 import SearchControls from './components/SearchControls.jsx'
 import ResultsSection from './components/ResultsSection.jsx'
 import StatusMessage from './components/StatusMessage.jsx'
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <header>
         <Hero />
       </header>
