@@ -4,6 +4,8 @@ Um explorador interativo para descobrir os autores e as características dos sub
 
 Esta é a **versão em React** do projeto. A versão original, em HTML, CSS e JavaScript puros, está em [projeto-mestres-do-misterio](https://github.com/Alexmacol/projeto-mestres-do-misterio) e publicada em https://projeto-mestres-do-misterio.vercel.app/.
 
+O site em React está publicado em https://projeto-mestres-do-misterio-react.vercel.app/.
+
 ## Sobre o Projeto
 
 "Mestres do Mistério" é uma aplicação web de página única para amantes da literatura de mistério. O usuário escolhe um subgênero e pode explorar o universo do mistério de duas formas: descobrindo os autores mais influentes do subgênero ou lendo uma análise aprofundada sobre ele.
@@ -121,8 +123,9 @@ vercel.json            Rewrite de /api/* para o servidor
 
 ## Deploy
 
-O projeto é preparado para a Vercel:
+O projeto está publicado na Vercel: https://projeto-mestres-do-misterio-react.vercel.app/
 
+- A cada `git push` na branch `main`, a Vercel faz um novo deploy automaticamente.
 - O front-end (Vite) é detectado automaticamente. A Vercel roda `npm run build` e publica a pasta `dist`.
 - O `api/server.js` vira uma função, e o `vercel.json` leva tudo que começa com `/api/` até ela.
 - O campo `engines` do `package.json` fixa o Node em 22.x.
