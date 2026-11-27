@@ -28,6 +28,9 @@
   .card {
     padding: 20px;
   }
+  .card-header {
+    min-height: 0;
+  }
   .card-details p {
     font-size: 1.3em;
   }

@@ -296,6 +296,7 @@ body {
 .card-header {
   gap: 15px;
   margin-bottom: 15px;
+  min-height: 95px;
   text-align: left;
 }
 
